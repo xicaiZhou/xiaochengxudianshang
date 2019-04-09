@@ -1,0 +1,15 @@
+/* pages/authorize/index.wxss */
+page{
+  height: 100%;
+  width: 100%;
+  background-color: #F2f2f2;
+}
+.titile{
+  padding: 30rpx 30rpx 0rpx 30rpx;
+  font-size: 30rpx;
+}
+.save-btn{
+  margin-top: 50rpx;
+  background: green;
+  color: #fff;
+}

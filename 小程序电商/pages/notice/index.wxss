@@ -1,0 +1,16 @@
+/* pages/notice/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background: #F2f2f2;
+}
+.notice {
+  width: 750rpx;
+  padding: 35rpx;
+  font-size: 30rpx;
+}
+.title {
+  color:chocolate;
+  font-size: 35rpx;
+  margin-bottom: 30rpx;
+}

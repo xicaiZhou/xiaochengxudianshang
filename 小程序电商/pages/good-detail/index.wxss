@@ -1,0 +1,331 @@
+/* pages/good-detail/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #F2f2f2;
+
+}
+.container {
+  height: 50%;
+  padding-bottom: 100rpx;
+}
+.swiper-container{
+  width: 100%;
+  position: relative;  
+}
+.swiper_box{
+  width: 100%;
+  height: 748rpx;
+}
+.slide-image{
+  width: 100%;
+  height: 748rpx;
+  display: inline-block;
+  overflow: hidden;
+}
+.top-view-leftTitle{
+ margin-top: 10rpx;
+}
+.good-info{
+  background: #fff;
+  width: 100%;
+  padding: 10rpx 0rpx 0rpx 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 24rpx;
+  position: relative;
+}
+.top-view-shareTitle{
+  width: 600rpx;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  color: red;
+  margin-top: 10rpx;
+}
+.good-info-bottom{
+  height: 60rpx;
+  width: 100%;
+  color:#e64340;
+  box-sizing:border-box;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-top: 20rpx;
+  line-height: 60rpx;
+}
+.goods-price{
+  float: left;
+  width: 30%;
+}
+.share{
+  position: absolute;
+  width: 45px;
+  height: 120px;
+  right: 10px;
+  top: 10rpx;
+  line-height: 10rpx;
+}
+.share-image{
+  width: 45rpx;
+  height: 60rpx;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.share-title{
+  font-size: 20rpx;
+  color: red;
+}
+.share button{
+ position: absolute;
+ top: 0rpx;
+ left: 0rpx;
+ opacity: 0;
+ height: 50px;
+ width: 50px;
+}
+.row-arrow{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0  120rpx 0 35rpx;
+  /* text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; */
+  height: 102rpx;
+  font-size: 28rpx;
+  line-height: 102rpx;
+  margin-bottom: 28rpx;
+  background: #fff url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 697rpx center;
+  background-size: 18rpx auto;
+
+}
+.goods-des-info{
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+}
+.label-title{
+  font-size:28rpx;
+  color:#000000;
+  padding: 30rpx;
+  border-bottom: 1px solid #D3D3D3;
+
+}
+.goods-text{
+  width: 100%;
+  font-size:28rpx;
+  color:#666666;
+  line-height: 56rpx;
+}
+.reputation-item{
+  background: #fff;
+  padding-top:10rpx;
+  padding-left: 20rpx;
+  min-height: 180rpx;
+  border-bottom: 1px solid #D3D3D3;
+  display: flex;
+  flex-direction: column;
+}
+.reputation-item-header{
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  float: left;
+  margin-right: 20rpx;
+}
+.reputation-item-goodsInfo{
+  width: 100%;
+  font-size: 24rpx;
+  color: #D3D3D3;
+}
+.reputation-item-content{
+  width: 100%;
+  font-size: 28rpx;
+}
+.bottom-view{
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  position: fixed;
+  z-index: 9998;
+  display: flex;
+  bottom: 0;
+  right: 0;
+  border-top: 1px solid #D3D3D3;
+}
+.bottom-view button{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  opacity: 0;
+}
+.contact{
+  font-size: 20rpx;
+  width: 125rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: green;
+  align-items: center;
+  background: url("https://cdn.it120.cc/images/weappshop/kefu.png") no-repeat center 21rpx;
+  background-size: 55rpx auto; 
+  box-sizing: border-box;
+}
+.shop-cart-btn{
+  position: relative;
+  width: 125rpx;
+  height: 100%;
+  font-size: 20rpx;
+  align-items: center;
+  background: url("https://cdn.it120.cc/images/weappshop/cart.png") no-repeat center 21rpx;
+  background-size: 55rpx auto;
+  display: flex;
+  flex-direction: column;
+  color: green;
+}
+.shop-num{
+  position: absolute;
+  top:15rpx;
+  right: 12rpx;
+  color: red;
+}
+.join-buy-car{
+  width: 250rpx;
+  height: 100%;
+  background: #D54D2B;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+}
+.buy-now{
+   width: 250rpx;
+  height: 100%;
+  background: red;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+}
+.show-popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+}
+.popup-content{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background: #fff;
+  animation: show 1.5s;
+  opacity: 1;
+}
+@keyframes show{
+  from{opacity: 0;}
+  to {opacity: 1;}
+}
+.pop-goods-info{
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
+.pop-img-box{
+  width: 120rpx;
+  height: 120rpx;
+  overflow: hidden;
+  margin-right: 26rpx;
+}
+.goods-thumbnail{
+  width: 120rpx;
+  height: 120rpx;
+}
+.pop-goods-des{
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+
+}
+.pop-goods-title{
+  font-size: 30rpx;
+  width: 100%;
+}
+.pop-goods-price{
+  font-size: 24rpx;
+  color: red;
+}
+.label{
+  font-size: 34rpx;
+  margin-bottom: 20rpx;
+}
+.size-label-box{
+  font-size: 26rpx;
+  padding: 30rpx 0 20rpx 30rpx;
+}
+.label-item-box{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+ 
+}
+.label-item{
+ border: 1rpx solid #ddd;
+ margin: 0 20rpx 20rpx 0;
+ font-size:26rpx;
+ padding: 10rpx 20rpx;
+}
+.popup-join-btn{
+  width: 100%;
+  height: 89rpx;
+  text-align: center;
+  line-height: 89rpx;
+  font-size:34rpx;
+  color:#ffffff;
+  background-color: #e64340;
+}
+.selectNum{
+  height: 80px;
+  width: 100%;
+  display: flex;
+  line-height: 80px;
+  border-top: 1rpx solid #ddd;
+  align-items: center;
+  margin-left: 30rpx;
+}
+.selectNum .num{
+ font-size: 32rpx;
+}
+.num-box{
+  position: absolute;
+  right: 20px;
+  height: 60rpx;
+  width: 210rpx;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.num-jian{
+  width: 50rpx;
+  border-right: 1px solid #ddd;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.num-input{
+  width: 110rpx;
+  line-height: 180rpx;
+}
+.num-jia{
+  width: 50rpx;
+  border-left: 1px solid #ddd;
+  height: 60rpx;
+  line-height: 60rpx;
+}

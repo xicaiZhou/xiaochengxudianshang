@@ -1,0 +1,10 @@
+<!--pages/authorize/index.wxml-->
+<view class='container'>
+  <form bindsubmit='bindSvae'>
+   <view class='titile'>1.同意当前小程序获取您的微信头像</view>
+   <view class='titile'>2.同意当前小程序获取您的微信昵称等其他信息</view>
+  <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="save-btn">授权登录    </button>
+
+
+  </form>
+</view>

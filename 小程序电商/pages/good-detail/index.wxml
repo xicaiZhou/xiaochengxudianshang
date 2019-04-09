@@ -1,0 +1,109 @@
+<!--pages/good-detail/index.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+
+<view class='container'>
+  <view class='swiper-container' wx:if="{{!goodsDetail.basicInfo.videoId}}">
+   <swiper class='swiper_box' autoplay='{{autoplay}}' duration='{{duration}}' indicator-dots='true' circular='true'>
+     <block wx:for="{{goodsDetail.pics}}" wx:key="id">
+      <swiper-item>
+       <image src='{{item.pic}}_m' class='slide-image' mode='aspectFit' lazy-load='true'></image>
+      </swiper-item>
+     </block>
+   </swiper>
+  </view>
+  <view class='swiper-container' wx:else>
+   <video src='{{videoMp4Src}}' autoplay='true' loop='true' style='width:100%'></video>
+  </view>
+  <view class='good-info'>
+     <view class='top-view-leftTitle'>{{goodsDetail.basicInfo.name}}</view>
+     <view class="top-view-shareTitle" wx:if="{{goodsDetail.basicInfo.commissionType == 1}}">分享有赏，好友下单后可得 {{goodsDetail.basicInfo.commission}} 积分奖励</view>
+    <view class="top-view-shareTitle" wx:if="{{goodsDetail.basicInfo.commissionType == 2}}">分享有赏，好友下单后可得 {{goodsDetail.basicInfo.commission}}元 现金奖励</view>
+    <view class='good-info-bottom'>
+     <view class="goods-price" >¥ {{selectSizePrice}}</view>
+     <view class="goods-price" style='color:#D3D3D3;font-weight:normal;font-size:22rpx;'>购买{{goodsDetail.basicInfo.numberOrders}}次</view>
+    <view class="goods-price" style='color:#D3D3D3;font-weight:normal;font-size:22rpx;'>共 {{goodsDetail.basicInfo.numberGoodReputation}} 次好评</view>
+    </view>
+     
+   <view class='share'>
+    <image class='share-image' src='../../Images/qd.png' mode='aspectFit' ></image>
+    <button open-type='share'>分享</button>
+    <text class='share-title'>分享有赏</text>
+   </view>
+  </view>
+  <view wx:if="{{hasMoreSelect}}" class="row-arrow" bindtap="bindGuiGeTap">
+      {{selectSize}}
+  </view>
+  <view class="goods-des-info">
+    <view class="label-title">商品介绍</view>
+    <view class="goods-text">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+  <view class="goods-des-info" style='margin-bottom:100rpx;' wx:if="{{reputation}}">
+      <view class="label-title">商品评论
+        <text style="color:red">（{{reputation.length}}）</text>
+      </view>
+      <view wx:for="{{reputation}}" wx:key="id" class='goods-text'>
+       <view class='reputation-item'>
+        <view>
+         <image class='reputation-item-header'src="{{item.user.avatarUrl}}"></image>
+         <view>{{item.user.city}}</view>
+        </view>
+        <view class='reputation-item-goodsInfo'>{{item.goods.dateReputation}}  {{item.goods.goodsName}}</view>
+        <view class='reputation-item-content'>{{item.goods.goodReputationRemark}}</view>
+       </view>
+      </view>
+      <view style='height:100rpx;opacity: 0;'>加载完成！</view>
+  </view>
+  <view class='bottom-view'>
+   <view class="contact">
+     <button open-type='contact' style="opacity:0;"></button>
+     <view style='position:absolute; bottom:10rpx;'> 客服 </view>
+   </view>
+   <view class="shop-cart-btn">
+     <view class="shop-num">({{shopNum}})</view>
+     <view style='position:absolute; bottom:10rpx;'> 购物车 </view>
+   </view>
+   
+    <view wx:if="{{!goodsDetail.basicInfo.pingtuan}}" class='join-buy-car'>加入购物车</view>
+    <view wx:if="{{!goodsDetail.basicInfo.pingtuan}}" class='buy-now'>立即购买</view>
+    <view wx:if="{{goodsDetail.basicInfo.pingtuan}}" class='join-buy-car'>单独购买</view>
+    <view wx:if="{{goodsDetail.basicInfo.pingtuan}}" class='buy-now'>发起拼团</view>
+  </view>
+  <view class='show-popup' hidden='{{hideShopPopup}}' catchtap = 'hideShopPopup'>
+   <view class='popup-content' catchtap="noHide">
+    <view class='pop-goods-info'>
+     <view>
+       <image src='{{goodsDetail.basicInfo.pic}}' class="goods-thumbnail"/>
+     </view>
+     <view class="pop-goods-des">
+       <view class="pop-goods-title">{{goodsDetail.basicInfo.name}}</view>
+       <view class="pop-goods-price">¥ {{selectSizePrice}}</view></view>
+    </view>
+    <view class='size-label-box'>
+     <block wx:for="{{goodsDetail.properties}}" wx:for-item="property" wx:for-index="inx" wx:key="id">
+      <view class="label">{{property.name}}</view> 
+      <view class="label-item-box">
+       <view class="label-item"  wx:for="{{property.childsCurGoods}}" wx:key="id" >
+        {{item.name}}
+       </view> 
+      </view>
+     </block>
+   </view> 
+    <view class='selectNum'>
+      <view class='num'>数量</view>
+       <view class='num-box'>
+        <view class='num-jian'>-</view>
+        <view class='num-input'>
+           <input style='height:60rpx;' type='number' value='0'></input>
+        </view>
+        <view class='num-jia'>+</view>
+       </view>
+     </view>
+   <view class="popup-join-btn">
+    加入购物车
+   </view>
+   </view>
+  </view>
+
+</view>
